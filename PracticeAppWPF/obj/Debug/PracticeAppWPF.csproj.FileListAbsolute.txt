@@ -1,0 +1,35 @@
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\bin\Debug\PracticeAppWPF.exe.config
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\bin\Debug\PracticeAppWPF.exe
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\bin\Debug\PracticeAppWPF.pdb
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.csproj.AssemblyReference.cache
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\MainWindow.g.cs
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\PagasApp\Registration.g.cs
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\App.g.cs
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF_MarkupCompile.cache
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF_MarkupCompile.lref
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\MainWindow.baml
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\PagasApp\Registration.baml
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.g.resources
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.Properties.Resources.resources
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.csproj.GenerateResource.cache
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.csproj.CoreCompileInputs.cache
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.exe
+C:\Users\usersql\source\repos\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.pdb
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\bin\Debug\PracticeAppWPF.exe.config
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\bin\Debug\PracticeAppWPF.exe
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\bin\Debug\PracticeAppWPF.pdb
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.csproj.AssemblyReference.cache
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.csproj.SuggestedBindingRedirects.cache
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\MainWindow.g.cs
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\PagasApp\Registration.g.cs
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\App.g.cs
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF_MarkupCompile.cache
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF_MarkupCompile.lref
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\MainWindow.baml
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\PagasApp\Registration.baml
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.g.resources
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.Properties.Resources.resources
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.csproj.GenerateResource.cache
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.csproj.CoreCompileInputs.cache
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.exe
+C:\Users\Виталя\Desktop\УП 04\День 1\PracticeAppWPF\PracticeAppWPF\obj\Debug\PracticeAppWPF.pdb
