@@ -1,18 +1,9 @@
-﻿using PracticeAppWPF.PagasApp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using PracticeAppWPF.Pages;
+using PracticeAppWPF.Pages.AuthorizationPage;
+using PracticeAppWPF.Pages.PersonalAccountPage;
+using PracticeAppWPF.Pages.RegistrationPage;
 
 namespace PracticeAppWPF
 {
@@ -21,15 +12,33 @@ namespace PracticeAppWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static Frame s_mainFrame;
         public MainWindow()
         {
             InitializeComponent();
+            s_mainFrame = MainFrame;
+
+            NavigateToAuthorizationPage();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public static void NavigateToRegistrationPage()
         {
-            Registration registration= new Registration();
-            registration.Show();
+            s_mainFrame.Navigate(Registration.Instance);
+        }
+
+        public static void NavigateToAuthorizationPage()
+        {
+            s_mainFrame.Navigate(Authorization.Instance);
+        }
+
+        public static void NavigateToAdminPanelPage()
+        {
+            s_mainFrame.Navigate(AdminPanel.Instance);
+        }
+
+        public static void NavigateToPersonalAccountPage()
+        {
+            s_mainFrame.Navigate(PersonalAccount.Instance);
         }
     }
 }
