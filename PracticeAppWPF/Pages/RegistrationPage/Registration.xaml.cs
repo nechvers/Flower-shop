@@ -22,9 +22,9 @@ namespace PracticeAppWPF.Pages.RegistrationPage
         public Registration()
         {
             InitializeComponent();
-            DataContext = new RegistrationViewModel();
-            Posts.ItemsSource = Database.Posts.ToList();
-            Divisions.ItemsSource = Database.Divisions.ToList();
+            //DataContext = new RegistrationViewModel();
+            //Posts.ItemsSource = Database.Posts.ToList();
+            //Divisions.ItemsSource = Database.Divisions.ToList();
         }
 
         private void AddPhotoButton_Click(object sender, RoutedEventArgs e)
@@ -74,6 +74,29 @@ namespace PracticeAppWPF.Pages.RegistrationPage
             PasswordRepeat.Password = txtVisiblePasswordRepeat.Text;
             PasswordRepeat.Visibility = Visibility.Visible;
             txtVisiblePasswordRepeat.Visibility = Visibility.Hidden;
+        }
+
+        private void TextBoxPhone_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            string phoneNumber = textBox.Text;
+
+            string digitsOnly = Regex.Replace(phoneNumber, @"[^\d]", "");
+
+            if (digitsOnly.Length >= 11 && digitsOnly[0] == '8')
+            {
+                textBox.Text = "8" + digitsOnly.Substring(1, 10);
+            }
+            else if (digitsOnly.Length >= 11 && digitsOnly.StartsWith("7"))
+            {
+                textBox.Text = "+7" + digitsOnly.Substring(1, 10);
+            }
+            else
+            {
+                // Некорректный формат номера
+                MessageBox.Show("Некорректный формат номера");
+                TextBoxPhone.Text = " ";
+            }
         }
 
 

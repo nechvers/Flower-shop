@@ -101,9 +101,21 @@
     </Compile>
     <Compile Include="Pages\AuthorizationPage\AuthorizationViewModel.cs" />
     <Compile Include="Pages\Command.cs" />
+    <Compile Include="Pages\DetailedRegistration.xaml.cs">
+      <DependentUpon>DetailedRegistration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainСategories.xaml.cs">
+      <DependentUpon>MainСategories.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MultiValueConverter.cs" />
+    <Compile Include="Pages\OrderBuy.xaml.cs">
+      <DependentUpon>OrderBuy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PersonalAccountPage\PersonalAccountViewModel.cs" />
     <Compile Include="Pages\RegistrationPage\RegistrationViewModel.cs" />
+    <Compile Include="Pages\Trash.xaml.cs">
+      <DependentUpon>Trash.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Post.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -136,11 +148,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DetailedRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainСategories.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrderBuy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PersonalAccountPage\PersonalAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\RegistrationPage\Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Trash.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -208,6 +236,17 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Resource Include="Pages\bcfb3a569d6a22639c12349ba8400ff0.jpg" />
+    <Resource Include="Pages\128113-7bho2j1ysgpfqw9e6ait.jpg" />
+    <Resource Include="Pages\ьукеты.jpg" />
+    <Resource Include="Pages\svezh.jpg" />
+    <Resource Include="Pages\icons8-телеграм-50.png" />
+    <Resource Include="Pages\icons8-instagram-50.png" />
+    <Resource Include="Pages\icons8-vk-в-круге-50.png" />
+    <Resource Include="Pages\background.png" />
+    <Resource Include="Pages\AuthorizationPage\background.png" />
+    <Resource Include="Pages\RegistrationPage\background.png" />
+    <Resource Include="Pages\RegistrationPage\1686836966_kartin-papik-pro-p-kartinki-tsveti-na-serom-fone-31.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

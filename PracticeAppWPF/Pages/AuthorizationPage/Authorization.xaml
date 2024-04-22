@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:authorizationpage="clr-namespace:PracticeAppWPF.Pages.AuthorizationPage" d:DataContext="{d:DesignInstance Type=authorizationpage:AuthorizationViewModel}"
         mc:Ignorable="d"
-        Title="Авторизация" Height="371.804" Width="301.056" Background="#FFDADADA">
+        Title="Цветучено" Height="371.804" Width="301.056">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Pages/AuthorizationPage/background.png" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
             <RowDefinition Height="60"/>

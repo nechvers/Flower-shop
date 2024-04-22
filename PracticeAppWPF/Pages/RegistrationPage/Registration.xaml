@@ -6,11 +6,17 @@
         xmlns:pages="clr-namespace:PracticeAppWPF.Pages"
         d:DataContext="{d:DesignInstance Type=registrationpage:RegistrationViewModel}"
         mc:Ignorable="d"
-        Title="Регистарция" Height="425" Width="600" Background="#FFDADADA">
+        Title="Регистарция" Height="425" Width="600">
     <Page.Resources>
         <pages:MultiValueConverter x:Key="Converter"/>
     </Page.Resources>
+    <Page.Background>
+        <ImageBrush/>
+    </Page.Background>
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Pages/RegistrationPage/background.png" Stretch="Fill"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="200"/>
@@ -30,46 +36,52 @@
         <TextBox Text="{Binding Surname}" HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="20" Grid.Row="1"/>
         <TextBox Text="{Binding Name}" Grid.Column="1" HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="20" Grid.Row="1"/>
         <TextBox Text="{Binding Patronymic}" Grid.Column="2" HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="20" Grid.Row="1"/>
-        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Height="26" Width="60"/>
-        <Label Content="Имя" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Column="1" Height="26" Width="33"/>
-        <Label Content="Отчество" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Column="2" Height="26" Width="61"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Height="26" FontWeight="Bold"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Column="1" Height="26" FontWeight="Bold"/>
+        <Label Content="Отчество" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Column="2" Height="26" FontWeight="Bold"/>
 
         <TextBox Text="{Binding Passport}" HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="20" Grid.Row="2"/>
-        <TextBox Text="{Binding Phone}" Grid.Column="1" HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="20" Grid.Row="2"/>
-        <Label Content="Пасспорт" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Row="1" Height="26" Width="62"/>
-        <Label Content="Телефон" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Height="26" Width="57"/>
-        <Button x:Name="AddPhotoButton" Grid.Column="2" Content="Добавить фото" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="40" Width="180" Background="White" BorderBrush="#FFABADB3" Click="AddPhotoButton_Click"/>
-        <Label Content="Должность" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" Grid.Row="3" Height="26" Width="71"/>
-        <Label Content="Подразделение" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="3" Height="26" Width="96"/>
-        <ComboBox SelectedItem="{Binding Post}" DisplayMemberPath="Name" x:Name="Posts" HorizontalAlignment="Center" Margin="0,32,0,0" Grid.Row="3" VerticalAlignment="Top" Width="180" Height="22"/>
-        <ComboBox SelectedItem="{Binding Division}" DisplayMemberPath="Name" x:Name="Divisions" HorizontalAlignment="Center" Margin="0,32,0,0" Grid.Row="3" VerticalAlignment="Top" Width="180" Grid.Column="1" Height="22"/>
+        <TextBox x:Name="TextBoxPhone" MaxLength="11" Text="{Binding Phone}" Grid.Column="1" HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="20" Grid.Row="2" TextChanged="TextBoxPhone_TextChanged"/>
+        <Label Content="Пасспорт" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Row="1" Height="26" FontWeight="Bold"/>
+        <Label Content="Телефон" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Height="26" FontWeight="Bold"/>
+        <Button x:Name="AddPhotoButton" Grid.Column="2" Content="Добавить фото" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Height="40" Width="180" Background="White" BorderBrush="#FFABADB3" Click="AddPhotoButton_Click" FontWeight="Bold"/>
+        <Label Content="Пол" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" FontWeight="Bold" Margin="10,0,0,0"/>
+        <RadioButton x:Name="RadioButtonMan" Content="Мужской" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <RadioButton x:Name="RadioButtonWoman" Content="Женский" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="10,35,0,0" HorizontalAlignment="Left"/>
         <TextBox Text="{Binding Email}" Grid.Column="2" HorizontalAlignment="Center" Margin="0,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="20" Grid.Row="3"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" Grid.Column="2" Grid.Row="3" Height="26" Width="38"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" Grid.Column="2" Grid.Row="3" Height="26" FontWeight="Bold"/>
         <TextBox Text="{Binding Login}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="180" Height="20" Grid.Row="4"/>
 
         <StackPanel Grid.Column="1" Grid.Row="4">
-            <Label Content="Пароль" Height="26" Width="52" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+            <Label Content="Пароль" Height="26" HorizontalAlignment="Left" Margin="10,0,0,0" FontWeight="Bold"/>
             <PasswordBox Width="180" Height="20" x:Name="passwordBox" HorizontalAlignment="Center" Margin="0,10,0,0"/>
             <TextBox x:Name="txtVisiblePasswordbox" Width="180" Height="20" HorizontalAlignment="Center" Margin="0,-20,0,0" Visibility="Collapsed"/>
             <CheckBox x:Name="ChekBoxPassword" Content="Показать пароль" HorizontalAlignment="Left" Margin="10,10,0,0" Checked="ShowPassword_Checked" Unchecked="ShowPassword_Unchecked" />
         </StackPanel>
 
         <StackPanel Grid.Column="2" Grid.Row="4">
-            <Label Content="Повтор пароля" Height="26" Width="100" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+            <Label Content="Повтор пароля" Height="26" Width="100" HorizontalAlignment="Left" Margin="10,0,0,0" FontWeight="Bold"/>
             <PasswordBox Width="180" Height="20" x:Name="PasswordRepeat" HorizontalAlignment="Center" Margin="0,10,0,0"/>
             <TextBox x:Name="txtVisiblePasswordRepeat" Width="180" Height="20" HorizontalAlignment="Center" Margin="0,-20,0,0" Visibility="Collapsed"/>
             <CheckBox x:Name="ChekBoxPasswordRepeat" Content="Показать пароль" Checked="ShowPasswordRepeat_Checked" Unchecked="ShowPasswordRepeat_Unchecked" HorizontalAlignment="Left" Margin="10,10,0,0" />
         </StackPanel>
 
-        <Label Content="Логин" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="4" Height="26" Width="44"/>
-        <Button Command="{Binding RegisterCommand}" x:Name="RegistrationButton" Grid.Column="1" Content="Зарегистрироваться" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Height="40" Width="180" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" Margin="0,14,0,0">
-            <Button.CommandParameter>
-                <MultiBinding Converter="{StaticResource Converter}">
-                    <Binding ElementName="passwordBox"/>
-                    <Binding ElementName="PasswordRepeat"/>
-                </MultiBinding>
-            </Button.CommandParameter>
-        </Button>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="4" Height="26" FontWeight="Bold"/>
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="BackButton" Grid.Column="1" Content="Назад" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Height="40" Width="180" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" Margin="0,14,25,0">
+            </Button>
+            <Button Command="{Binding RegisterCommand}" x:Name="NextButton" Grid.Column="1" Content="Продолжить" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" Height="40" Width="180" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" Margin="0,14,0,0">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource Converter}">
+                        <Binding ElementName="passwordBox"/>
+                        <Binding ElementName="PasswordRepeat"/>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+        </StackPanel>
+        
+        <DatePicker Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Margin="10,20,0,0"/>
+        <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Height="26" FontWeight="Bold" Grid.RowSpan="2"/>
 
     </Grid>
 </Page>
