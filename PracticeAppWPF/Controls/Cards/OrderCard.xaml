@@ -14,7 +14,7 @@
         </StackPanel>
         <Label Content="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:OrderCard}}, Path=Source.Flower.Description}" Margin="10,10,10,0" FontSize="16" HorizontalAlignment="Center"/>
         <StackPanel Orientation="Horizontal" Height="30" Width="200" Margin="0,15,0,15">
-            <Button Content="-" Width="40" Background="#FF38621C" Foreground="White" />
+            <Button Content="-" Width="40" Background="#FF38621C" Foreground="White" Click="Button_Click" />
             <TextBox Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:OrderCard}}, Path=Source.Count}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5,0,5,0" Width="110"/>
             <Button Content="+" Width="40" Background="#FF38621C" Foreground="White" />
         </StackPanel>
