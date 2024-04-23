@@ -22,9 +22,7 @@ namespace PracticeAppWPF.Pages.RegistrationPage
         public Registration()
         {
             InitializeComponent();
-            //DataContext = new RegistrationViewModel();
-            //Posts.ItemsSource = Database.Posts.ToList();
-            //Divisions.ItemsSource = Database.Divisions.ToList();
+            DataContext = new RegistrationViewModel();
         }
 
         private void AddPhotoButton_Click(object sender, RoutedEventArgs e)
@@ -78,7 +76,7 @@ namespace PracticeAppWPF.Pages.RegistrationPage
 
         private void TextBoxPhone_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
+            /*TextBox textBox = (TextBox)sender;
             string phoneNumber = textBox.Text;
 
             string digitsOnly = Regex.Replace(phoneNumber, @"[^\d]", "");
@@ -96,7 +94,7 @@ namespace PracticeAppWPF.Pages.RegistrationPage
                 // Некорректный формат номера
                 MessageBox.Show("Некорректный формат номера");
                 TextBoxPhone.Text = " ";
-            }
+            }*/
         }
 
 

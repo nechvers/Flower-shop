@@ -13,10 +13,10 @@ namespace PracticeAppWPF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class practice04Entities : DbContext
+    public partial class practiceEntities : DbContext
     {
-        public practice04Entities()
-            : base("name=practice04Entities")
+        public practiceEntities()
+            : base("name=practiceEntities")
         {
         }
     
@@ -26,9 +26,12 @@ namespace PracticeAppWPF
         }
     
         public virtual DbSet<Division> Divisions { get; set; }
+        public virtual DbSet<Flower> Flowers { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<ScheduleInput> ScheduleInputs { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Trash> Trashes { get; set; }
     }
 }

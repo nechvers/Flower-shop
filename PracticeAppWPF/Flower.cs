@@ -11,35 +11,22 @@ namespace PracticeAppWPF
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Staff
+    using System.IO;
+
+    public partial class Flower
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Staff()
+        public Flower()
         {
-            this.ScheduleInputs = new HashSet<ScheduleInput>();
             this.Trashes = new HashSet<Trash>();
         }
     
-        public string Surname { get; set; }
-        public string Name { get; set; }
-        public string Patronymic { get; set; }
-        public string Passport { get; set; }
         public int ID { get; set; }
-        public Nullable<int> Division { get; set; }
-        public Nullable<int> Post { get; set; }
-        public string Photo { get; set; }
-        public string NumberPhone { get; set; }
-        public string Email { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public Nullable<int> Role { get; set; }
+        public string Icon { get; set; }
+        public string IconFullPath => Path.Combine("../../Resources/Images/Flowers/", Icon);
+        public string Description { get; set; }
+        public int Cost { get; set; }
     
-        public virtual Division Division1 { get; set; }
-        public virtual Post Post1 { get; set; }
-        public virtual Role Role1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ScheduleInput> ScheduleInputs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Trash> Trashes { get; set; }
     }

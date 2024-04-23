@@ -80,8 +80,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\Cards\OrderCard.xaml.cs">
+      <DependentUpon>OrderCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="Division.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Flower.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model.Context.cs">
@@ -101,9 +107,10 @@
     </Compile>
     <Compile Include="Pages\AuthorizationPage\AuthorizationViewModel.cs" />
     <Compile Include="Pages\Command.cs" />
-    <Compile Include="Pages\DetailedRegistration.xaml.cs">
+    <Compile Include="Pages\DetailedRegistrationPage\DetailedRegistration.xaml.cs">
       <DependentUpon>DetailedRegistration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DetailedRegistrationPage\DetailedRegistrationViewModel.cs" />
     <Compile Include="Pages\MainСategories.xaml.cs">
       <DependentUpon>MainСategories.xaml</DependentUpon>
     </Compile>
@@ -113,8 +120,11 @@
     </Compile>
     <Compile Include="Pages\PersonalAccountPage\PersonalAccountViewModel.cs" />
     <Compile Include="Pages\RegistrationPage\RegistrationViewModel.cs" />
-    <Compile Include="Pages\Trash.xaml.cs">
-      <DependentUpon>Trash.xaml</DependentUpon>
+    <Compile Include="Pages\Orders.xaml.cs">
+      <DependentUpon>Orders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Cards\FlowerCard.xaml.cs">
+      <DependentUpon>FlowerCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Post.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -128,9 +138,16 @@
     <Compile Include="Staff.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Card\FlowerCard.xaml.cs">
-      <DependentUpon>FlowerCard.xaml</DependentUpon>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Trash.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Page Include="Controls\Cards\OrderCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -151,7 +168,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DetailedRegistration.xaml">
+    <Page Include="Pages\DetailedRegistrationPage\DetailedRegistration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,11 +188,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Trash.xaml">
+    <Page Include="Pages\Orders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Card\FlowerCard.xaml">
+    <Page Include="Controls\Cards\FlowerCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -227,10 +244,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pages\istockphoto-1300845620-612x612.jpg" />
+    <Resource Include="Resources\Images\Icons\istockphoto-1300845620-612x612.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Flowers\bcfb3a569d6a22639c12349ba8400ff0.jpg" />
+    <Resource Include="Resources\Images\Flowers\128113-7bho2j1ysgpfqw9e6ait.jpg" />
+    <Resource Include="Resources\Images\Flowers\ьукеты.jpg" />
+    <Resource Include="Resources\Images\Flowers\svezh.jpg" />
+    <Resource Include="Resources\Images\Icons\icons8-телеграм-50.png" />
+    <Resource Include="Resources\Images\Icons\icons8-instagram-50.png" />
+    <Resource Include="Resources\Images\Icons\icons8-vk-в-круге-50.png" />
+    <Resource Include="Resources\Images\Backgrounds\background.png" />
+    <Resource Include="Pages\AuthorizationPage\background.png" />
+    <Resource Include="Pages\RegistrationPage\background.png" />
+    <Resource Include="Pages\RegistrationPage\1686836966_kartin-papik-pro-p-kartinki-tsveti-na-serom-fone-31.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model.Context.tt">
@@ -243,17 +273,6 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Resource Include="Resources\Images\Flowers\bcfb3a569d6a22639c12349ba8400ff0.jpg" />
-    <Resource Include="Resources\Images\Flowers\128113-7bho2j1ysgpfqw9e6ait.jpg" />
-    <Resource Include="Resources\Images\Flowers\ьукеты.jpg" />
-    <Resource Include="Resources\Images\Flowers\svezh.jpg" />
-    <Resource Include="Pages\icons8-телеграм-50.png" />
-    <Resource Include="Pages\icons8-instagram-50.png" />
-    <Resource Include="Pages\icons8-vk-в-круге-50.png" />
-    <Resource Include="Pages\background.png" />
-    <Resource Include="Pages\AuthorizationPage\background.png" />
-    <Resource Include="Pages\RegistrationPage\background.png" />
-    <Resource Include="Pages\RegistrationPage\1686836966_kartin-papik-pro-p-kartinki-tsveti-na-serom-fone-31.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

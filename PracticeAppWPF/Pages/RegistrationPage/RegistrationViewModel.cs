@@ -17,9 +17,6 @@ namespace PracticeAppWPF.Pages.RegistrationPage
         private string m_phone;
         private string m_email;
         private string m_login;
-        private Division m_division;
-        private Post m_post;
-        private Role m_role;
         private Command m_registerCommand;
 
         public string Name
@@ -85,33 +82,7 @@ namespace PracticeAppWPF.Pages.RegistrationPage
                 OnPropertyChanged("Login");
             }
         }
-        public Division Division
-        {
-            get => m_division;
-            set
-            {
-                m_division = value;
-                OnPropertyChanged("Division");
-            }
-        }
-        public Post Post
-        {
-            get => m_post;
-            set
-            {
-                m_post = value;
-                OnPropertyChanged("Post");
-            }
-        }
-        public Role Role
-        {
-            get => m_role;
-            set
-            {
-                m_role = value;
-                OnPropertyChanged("Role");
-            }
-        }
+
 
         public Command RegisterCommand
         {
@@ -128,7 +99,7 @@ namespace PracticeAppWPF.Pages.RegistrationPage
             string pattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$";
             if (string.IsNullOrEmpty(Surname) || string.IsNullOrEmpty(Name)
                 || string.IsNullOrEmpty(Patronymic) || string.IsNullOrEmpty(Passport)
-                || string.IsNullOrEmpty(Phone) || Post == null || Division == null
+                || string.IsNullOrEmpty(Phone)
                 || string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Login)
                 || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(PasswordRepeat))
             {
@@ -152,6 +123,8 @@ namespace PracticeAppWPF.Pages.RegistrationPage
 
             }
 
+            MainWindow.NavigateToDetailedRegistrationPage();
+
             Staff staff = new Staff()
             {
                 Login = Login,
@@ -161,30 +134,11 @@ namespace PracticeAppWPF.Pages.RegistrationPage
                 Passport = Passport,
                 NumberPhone = Phone,
                 Email = Email,
-                Division = Division.ID,
-                Post = Post.ID,
                 Role = 1, // User role
                 Password = Bcrypt.HashPassword(Password, 4),
             };
-           
-            Database.CurrentUser = staff;
-            Database.Staffs.Add(staff);
 
-            try
-            {
-                Database.SaveChanges();
-            }
-            catch (DbEntityValidationException ex)
-            {
-                foreach (DbEntityValidationResult validationError in ex.EntityValidationErrors)
-                {
-                    MessageBox.Show("Object: " + validationError.Entry.Entity.ToString());
-                    foreach (DbValidationError err in validationError.ValidationErrors)
-                    {
-                        MessageBox.Show(err.ErrorMessage);
-                    }
-                }
-            }
+            MainWindow.Candidate = staff;
 
 
         }

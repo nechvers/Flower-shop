@@ -52,8 +52,8 @@ namespace PracticeAppWPF.Pages.AuthorizationPage
                 return;
             }
 
-            Database.CurrentUser = employ;
-            MainWindow.NavigateToPersonalAccountPage();
+            MainWindow.CurrentUser = employ;
+            MainWindow.NavigateToMainСategoriesPage();
         }
 
 

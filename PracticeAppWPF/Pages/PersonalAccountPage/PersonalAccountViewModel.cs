@@ -11,7 +11,7 @@ namespace PracticeAppWPF.Pages.PersonalAccountPage
 {
     public class PersonalAccountViewModel : INotifyPropertyChanged
     {
-        private Staff user => Database.CurrentUser;
+        private Staff user => MainWindow.CurrentUser;
         private string m_password;
         private Command m_saveCommand;
 
@@ -134,7 +134,7 @@ namespace PracticeAppWPF.Pages.PersonalAccountPage
                 Password = hashedPassword,
             };
            
-            Database.CurrentUser = staff;
+            MainWindow.CurrentUser = staff;
             Database.Staffs.AddOrUpdate(staff);
 
             try
