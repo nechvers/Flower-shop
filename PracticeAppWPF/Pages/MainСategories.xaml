@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PracticeAppWPF.Pages"
+        xmlns:local="clr-namespace:PracticeAppWPF.Pages" xmlns:flowercard="clr-namespace:PracticeAppWPF.Controls.Card"
         mc:Ignorable="d"
         Title="MainСategories" Height="500" Width="820">
     <Grid>
@@ -46,55 +46,10 @@
         </StackPanel>
         <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
             <StackPanel Orientation="Horizontal">
-
-                <StackPanel Grid.Column="0" Width="250" Height="350" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Background="#FFA4C086" Margin="22,0,0,0">
-                    <Image Source="/Pages/svezh.jpg" Margin="0,10,0,0" Height="150"/>
-                    <Label Content="150 рублей" Margin="10,10,10,0" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold"/>
-                    <Label Content="Роза кустовая белая" Margin="10,10,10,0" FontSize="16" HorizontalAlignment="Center"/>
-                    <StackPanel Orientation="Horizontal" Height="30" Width="200" Margin="0,15,0,15">
-                        <Button Content="-" Width="40" Background="#FF38621C" Foreground="White"/>
-                        <TextBox Text="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5,0,5,0" Width="110"/>
-                        <Button Content="+" Width="40" Background="#FF38621C" Foreground="White"/>
-                    </StackPanel>
-                    <Button Content="В корзину" Foreground="White" Background="#FF38621C" Height="30" Width="200"/>
-                </StackPanel>
-
-                <StackPanel Grid.Column="1" Width="250" Height="350" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Background="#FFA4C086" Margin="22,0,0,0">
-                    <Image Source="/Pages/ьукеты.jpg" Margin="0,10,0,0" Height="150"/>
-                    <Label Content="370 рублей" Margin="10,10,10,0" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold"/>
-                    <Label Content="Пионы" Margin="10,10,10,0" FontSize="16" HorizontalAlignment="Center"/>
-                    <StackPanel Orientation="Horizontal" Height="30" Width="200" Margin="0,15,0,15">
-                        <Button Content="-" Width="40" Background="#FF38621C" Foreground="White"/>
-                        <TextBox Text="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5,0,5,0" Width="110"/>
-                        <Button Content="+" Width="40" Background="#FF38621C" Foreground="White"/>
-                    </StackPanel>
-                    <Button Content="В корзину" Foreground="White" Background="#FF38621C" Height="30" Width="200"/>
-                </StackPanel>
-
-                <StackPanel Grid.Column="2" Width="250" Height="350" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Background="#FFA4C086" Margin="22,0,0,0">
-                    <Image Source="/Pages/128113-7bho2j1ysgpfqw9e6ait.jpg" Margin="0,10,0,0" Height="150"/>
-                    <Label Content="650 рублей" Margin="10,10,10,0" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold"/>
-                    <Label Content="Гортензия (MIX)" Margin="10,10,10,0" FontSize="16" HorizontalAlignment="Center"/>
-                    <StackPanel Orientation="Horizontal" Height="30" Width="200" Margin="0,15,0,15">
-                        <Button Content="-" Width="40" Background="#FF38621C" Foreground="White"/>
-                        <TextBox Text="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5,0,5,0" Width="110"/>
-                        <Button Content="+" Width="40" Background="#FF38621C" Foreground="White"/>
-                    </StackPanel>
-                    <Button Content="В корзину" Foreground="White" Background="#FF38621C" Height="30" Width="200"/>
-                </StackPanel>
-
-                <StackPanel Grid.Column="3" Width="250" Height="350" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Background="#FFA4C086" Margin="22,0,0,0">
-                    <Image Source="/Pages/bcfb3a569d6a22639c12349ba8400ff0.jpg" Margin="0,10,0,0" Height="150"/>
-                    <Label Content="160 рублей" Margin="10,10,10,0" FontSize="16" HorizontalAlignment="Center" FontWeight="Bold"/>
-                    <Label Content="Статица" Margin="10,10,10,0" FontSize="16" HorizontalAlignment="Center"/>
-                    <StackPanel Orientation="Horizontal" Height="30" Width="200" Margin="0,15,0,15">
-                        <Button Content="-" Width="40" Background="#FF38621C" Foreground="White"/>
-                        <TextBox Text="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="5,0,5,0" Width="110"/>
-                        <Button Content="+" Width="40" Background="#FF38621C" Foreground="White"/>
-                    </StackPanel>
-                    <Button Content="В корзину" Foreground="White" Background="#FF38621C" Height="30" Width="200"/>
-                </StackPanel>
-
+                <flowercard:FlowerCard ImageSource="../../Pages/svezh.jpg" Cost="150 рублей" Header="Роза кустовая белая"/>
+                <flowercard:FlowerCard ImageSource="../../Pages/ьукеты.jpg" Cost="370 рублей" Header="Пионы"/>
+                <flowercard:FlowerCard ImageSource="../../Pages/128113-7bho2j1ysgpfqw9e6ait.jpg" Cost="650 рублей" Header="Гортензия (MIX)"/>
+                <flowercard:FlowerCard ImageSource="../../Pages/bcfb3a569d6a22639c12349ba8400ff0.jpg" Cost="160 рублей" Header="Статица"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

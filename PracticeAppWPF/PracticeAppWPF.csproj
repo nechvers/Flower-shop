@@ -128,6 +128,9 @@
     <Compile Include="Staff.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Card\FlowerCard.xaml.cs">
+      <DependentUpon>FlowerCard.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -169,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Trash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Card\FlowerCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -236,10 +243,10 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Resource Include="Pages\bcfb3a569d6a22639c12349ba8400ff0.jpg" />
-    <Resource Include="Pages\128113-7bho2j1ysgpfqw9e6ait.jpg" />
-    <Resource Include="Pages\ьукеты.jpg" />
-    <Resource Include="Pages\svezh.jpg" />
+    <Resource Include="Resources\Images\Flowers\bcfb3a569d6a22639c12349ba8400ff0.jpg" />
+    <Resource Include="Resources\Images\Flowers\128113-7bho2j1ysgpfqw9e6ait.jpg" />
+    <Resource Include="Resources\Images\Flowers\ьукеты.jpg" />
+    <Resource Include="Resources\Images\Flowers\svezh.jpg" />
     <Resource Include="Pages\icons8-телеграм-50.png" />
     <Resource Include="Pages\icons8-instagram-50.png" />
     <Resource Include="Pages\icons8-vk-в-круге-50.png" />
