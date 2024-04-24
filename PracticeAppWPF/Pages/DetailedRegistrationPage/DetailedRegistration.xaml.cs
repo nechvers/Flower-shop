@@ -15,5 +15,10 @@ namespace PracticeAppWPF.Pages.DetailedRegistrationPage
             InitializeComponent();
             DataContext = new DetailedRegistrationViewModel();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.NavigateToRegistrationPage();
+        }
     }
 }

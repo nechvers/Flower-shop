@@ -97,7 +97,7 @@ namespace PracticeAppWPF.Pages.PersonalAccountPage
 
         public void TrySave(object parameter)
         {
-            
+
             string pattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$";
             if (string.IsNullOrEmpty(Surname) || string.IsNullOrEmpty(Name)
                 || string.IsNullOrEmpty(Patronymic) || string.IsNullOrEmpty(Passport)
@@ -113,7 +113,7 @@ namespace PracticeAppWPF.Pages.PersonalAccountPage
             {
                 hashedPassword = Bcrypt.HashPassword(Password, 4);
             }
-  
+
             if (!Regex.IsMatch(Email, pattern))
             {
                 MessageBox.Show("Введенный Email, не соответсвует правильному email");
@@ -121,20 +121,17 @@ namespace PracticeAppWPF.Pages.PersonalAccountPage
 
             }
 
-            Staff staff = new Staff()
-            {
-                ID = user.ID,
-                Login = Login,
-                Name = Name,
-                Surname = Surname,
-                Patronymic = Patronymic,
-                Passport = Passport,
-                NumberPhone = Phone,
-                Email = Email,
-                Password = hashedPassword,
-            };
-           
-            MainWindow.CurrentUser = staff;
+            Staff staff = MainWindow.CurrentUser;
+
+            staff.Login = Login;
+            staff.Name = Name;
+            staff.Surname = Surname;
+            staff.Patronymic = Patronymic;
+            staff.Passport = Passport;
+            staff.NumberPhone = Phone;
+            staff.Email = Email;
+            staff.Password = hashedPassword;
+
             Database.Staffs.AddOrUpdate(staff);
 
             try

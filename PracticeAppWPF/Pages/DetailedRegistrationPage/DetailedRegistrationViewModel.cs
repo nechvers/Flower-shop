@@ -79,8 +79,15 @@ namespace PracticeAppWPF.Pages.DetailedRegistrationPage
                 return;
             }
 
-            var currentUser = Database.Staffs.Add(MainWindow.Candidate);
-            MainWindow.Candidate = currentUser;
+            var candidate = MainWindow.Candidate;
+            candidate.Street = Street;
+            candidate.Home = Home;
+            candidate.Room = Room;
+            candidate.Entrance = Entrance;
+            candidate.Floor = Floor;
+
+            var currentUser = Database.Staffs.Add(candidate);
+            MainWindow.CurrentUser = currentUser;
 
             try
             {
@@ -97,6 +104,8 @@ namespace PracticeAppWPF.Pages.DetailedRegistrationPage
                     }
                 }
             }
+
+            MainWindow.NavigateToMenuPage();
 
         }
 

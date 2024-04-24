@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d0163d4a891b4c20b45435341fe86556" Name="Diagram1">
-        <EntityTypeShape EntityType="practiceModel.Division" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="practiceModel.Flower" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="practiceModel.Post" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="practiceModel.Role" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="practiceModel.ScheduleInput" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="practiceModel.Staff" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="practiceModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="practiceModel.Trash" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="practiceModel.FK_Staff_Division" ManuallyRouted="false" />
-        <AssociationConnector Association="practiceModel.FK_Trash_Flower" ManuallyRouted="false" />
-        <AssociationConnector Association="practiceModel.FK_Staff_Post" ManuallyRouted="false" />
-        <AssociationConnector Association="practiceModel.FK_Staff_Role" ManuallyRouted="false" />
-        <AssociationConnector Association="practiceModel.FK_ScheduleInputs_Staff" ManuallyRouted="false" />
-        <AssociationConnector Association="practiceModel.FK_Trash_Staff" ManuallyRouted="false" />
+      <Diagram DiagramId="64fb7b9171884f9c99b867a8afb54f96" Name="Diagram1">
+        <EntityTypeShape EntityType="practice04Model.Division" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="practice04Model.Flower" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="practice04Model.Post" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="practice04Model.Role" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="practice04Model.ScheduleInput" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="practice04Model.Staff" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="practice04Model.sysdiagram" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="practice04Model.Trash" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="practice04Model.FK_Staff_Division" ManuallyRouted="false" />
+        <AssociationConnector Association="practice04Model.FK_Trash_Flower" ManuallyRouted="false" />
+        <AssociationConnector Association="practice04Model.FK_Staff_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="practice04Model.FK_Staff_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="practice04Model.FK_ScheduleInputs_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="practice04Model.FK_Trash_Staff" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

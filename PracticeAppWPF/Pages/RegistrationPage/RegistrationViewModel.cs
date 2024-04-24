@@ -123,7 +123,6 @@ namespace PracticeAppWPF.Pages.RegistrationPage
 
             }
 
-            MainWindow.NavigateToDetailedRegistrationPage();
 
             Staff staff = new Staff()
             {
@@ -139,6 +138,7 @@ namespace PracticeAppWPF.Pages.RegistrationPage
             };
 
             MainWindow.Candidate = staff;
+            MainWindow.NavigateToDetailedRegistrationPage();
 
 
         }

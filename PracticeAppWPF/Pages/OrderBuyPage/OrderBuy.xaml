@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PracticeAppWPF.Pages"
-        mc:Ignorable="d"
-        Title="OrderBuy" Height="505" Width="820">
+        xmlns:local="clr-namespace:PracticeAppWPF.Pages" xmlns:orderbuypage="clr-namespace:PracticeAppWPF.Pages.OrderBuyPage" d:DataContext="{d:DesignInstance Type=orderbuypage:OrderBuyViewModel}"
+      mc:Ignorable="d"
+        Title="OrderBuy" Height="505" Width="820" Loaded="Page_Loaded">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="../Resources/Images/Backgrounds/background.png"/>
+            <ImageBrush ImageSource="../../Resources/Images/Backgrounds/background.png"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
@@ -21,25 +21,25 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="#7F000000"></Grid>
         <StackPanel Grid.Column="2" Orientation="Horizontal">
-            <Button Content="Назад" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" Width="100" Margin="0,0,25,0"/>
-            <Button Content="Оформить" VerticalAlignment="Center" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" HorizontalContentAlignment="Center"/>
+            <Button Content="Назад" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" Width="100" Margin="0,0,25,0" Click="Button_Click_1"/>
+            <Button x:Name="BuyButton" Content="Оформить" VerticalAlignment="Center" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" HorizontalContentAlignment="Center"/>
         </StackPanel>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="ЦВЕТУЧИНО" FontSize="22" FontWeight="Bold"  Grid.Column="1" Foreground="White"/>
 
         <StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0">
             <TextBlock>
                 <Hyperlink NavigateUri="https://vk.com/syrprizko">
-                    <Image Width="50" Height="50" Source="/Pages/icons8-vk-в-круге-50.png"/>
+                    <Image Width="50" Height="50" Source="../../Resources/Images/Icons/icons8-vk-в-круге-50.png"/>
                 </Hyperlink>
             </TextBlock>
             <TextBlock>
                 <Hyperlink NavigateUri="https://www.instagram.com/teddyflowers_perm/">
-                    <Image Width="50" Height="50" Source="/Pages/icons8-instagram-50.png"/>
+                    <Image Width="50" Height="50" Source="../../Resources/Images/Icons/icons8-instagram-50.png"/>
                 </Hyperlink>
             </TextBlock>
             <TextBlock>
                 <Hyperlink NavigateUri="https://web.telegram.org/">
-                    <Image Width="50" Height="50" Source="/Pages/icons8-телеграм-50.png"/>
+                    <Image Width="50" Height="50" Source="../../Resources/Images/Icons/icons8-телеграм-50.png"/>
                 </Hyperlink>
             </TextBlock>
         </StackPanel>
@@ -61,38 +61,38 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Row="0" Grid.Column="0" Content="Фамилия" Margin="10,0,0,0" Height="30" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-            <TextBox Grid.Row="0" Grid.Column="0" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
+            <TextBox Text="{Binding Surname}"  Grid.Row="0" Grid.Column="0" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" IsReadOnly="True" />
 
             <Label Grid.Row="1" Grid.Column="0" Content="Имя" Margin="10,0,0,0" Height="30" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-            <TextBox Grid.Row="1" Grid.Column="0" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
+            <TextBox Text="{Binding Name}" Grid.Row="1" Grid.Column="0" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" IsReadOnly="True" />
 
             <Label Grid.Row="2" Grid.Column="0" Content="Отчество" Margin="10,0,0,0" Height="30" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-            <TextBox Grid.Row="2" Grid.Column="0" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
+            <TextBox Text="{Binding Patronymic}" Grid.Row="2" Grid.Column="0" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" IsReadOnly="True" />
 
             <Label Grid.Row="3" Grid.Column="0" Content="Телефон" Margin="10,0,0,0" Height="30" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-            <TextBox Grid.Row="3" Grid.Column="0" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
+            <TextBox Text="{Binding Phone}" Grid.Row="3" Grid.Column="0" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" IsReadOnly="True" />
 
             <Label Grid.Row="4" Grid.Column="0" Content="Email" Margin="10,0,0,0" Height="30" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-            <TextBox Grid.Row="4" Grid.Column="0" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
+            <TextBox Text="{Binding Email}" Grid.Row="4" Grid.Column="0" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" IsReadOnly="True" />
 
             <Label Grid.Row="0" Grid.Column="1" Content="Улица" Margin="10,0,0,0" Height="30" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
+            <TextBox Text="{Binding Street}" Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
 
             <Label Grid.Row="1" Grid.Column="1" Content="Дом" Margin="10,0,0,0" Height="30" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
+            <TextBox Text="{Binding Home}" Grid.Row="1" Grid.Column="1" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
 
             <Label Grid.Row="2" Grid.Column="1" Content="Квартира" Margin="10,0,0,0" Height="30" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
+            <TextBox Text="{Binding Entrance}" Grid.Row="2" Grid.Column="1" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
 
             <Label Grid.Row="3" Grid.Column="1" Content="Подъезд" Margin="10,0,0,0" Height="30" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
-            <TextBox Grid.Row="3" Grid.Column="1" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
+            <TextBox Text="{Binding Floor}" Grid.Row="3" Grid.Column="1" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
 
             <Label Grid.Row="4" Grid.Column="1" Content="Этаж" Margin="10,0,0,0" Height="30" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
             <TextBox Grid.Row="4" Grid.Column="1" Height="30" VerticalAlignment="Bottom" Margin="10,0,10,0" />
 
             <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal" Margin="10,0,0,0">
                 <Label Content="Стоимость: " FontWeight="Bold" FontSize="14"/>
-                <Label Content="300" FontWeight="Bold" FontSize="14"/>
+                <Label x:Name="Cost" Content="300" FontWeight="Bold" FontSize="14"/>
                 <Label Content="рублей" FontWeight="Bold" FontSize="14"/>
             </StackPanel>
 
@@ -104,11 +104,11 @@
 
             <StackPanel Grid.Row="7" Grid.Column="0" Orientation="Horizontal" Margin="10,0,0,0">
                 <Label Content="Итого: " FontWeight="Bold" FontSize="14"/>
-                <Label Content="300" FontWeight="Bold" FontSize="14"/>
+                <Label x:Name="FinalCost" Content="300" FontWeight="Bold" FontSize="14"/>
                 <Label Content="рублей" FontWeight="Bold" FontSize="14"/>
             </StackPanel>
 
-            <Button Grid.Column="1" Grid.Row="7" Content="Зазаказть" Foreground="White" Background="#FF38621C" Height="30" Width="200" HorizontalAlignment="Right" Margin="0,0,10,0" FontSize="14" FontWeight="Bold"/>
+            <Button Grid.Column="1" Grid.Row="7" Content="Зазаказть" Foreground="White" Background="#FF38621C" Height="30" Width="200" HorizontalAlignment="Right" Margin="0,0,10,0" FontSize="14" FontWeight="Bold" Click="Button_Click"/>
         </Grid>
 
     </Grid>

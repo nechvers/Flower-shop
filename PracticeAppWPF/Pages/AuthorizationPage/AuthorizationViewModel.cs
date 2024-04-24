@@ -53,7 +53,9 @@ namespace PracticeAppWPF.Pages.AuthorizationPage
             }
 
             MainWindow.CurrentUser = employ;
-            MainWindow.NavigateToMainСategoriesPage();
+            int? ordersFullPrice = Database.Trashes.Where(a => a.ID_User == employ.ID).Sum(a => (int?)a.Count * a.Flower.Cost);
+            MainWindow.OrdersFullPrice = (int)(ordersFullPrice == null ? 0 : ordersFullPrice);
+            MainWindow.NavigateToMenuPage();
         }
 
 

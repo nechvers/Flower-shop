@@ -97,6 +97,11 @@ namespace PracticeAppWPF.Pages.RegistrationPage
             }*/
         }
 
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.NavigateToAuthorizationPage();
+        }
+
 
         //       -----Методы-----
 

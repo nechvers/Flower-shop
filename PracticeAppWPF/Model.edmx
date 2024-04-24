@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище practiceModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище practice04Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Division">
           <Key>
             <PropertyRef Name="ID" />
@@ -60,6 +60,11 @@
           <Property Name="Login" Type="nvarchar" MaxLength="50" />
           <Property Name="Password" Type="nvarchar" MaxLength="100" />
           <Property Name="Role" Type="int" />
+          <Property Name="Street" Type="nvarchar" MaxLength="50" />
+          <Property Name="Home" Type="nvarchar" MaxLength="50" />
+          <Property Name="Room" Type="nvarchar" MaxLength="50" />
+          <Property Name="Entrance" Type="nvarchar" MaxLength="50" />
+          <Property Name="Floor" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -152,7 +157,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище practiceModelContainer">
+        <EntityContainer Name="Хранилище practice04ModelContainer">
           <EntitySet Name="Division" EntityType="Self.Division" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Flower" EntityType="Self.Flower" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
@@ -190,7 +195,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="practiceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="practice04Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Division">
           <Key>
             <PropertyRef Name="ID" />
@@ -251,6 +256,11 @@
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Role" Type="Int32" />
+          <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Home" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Room" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Entrance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Floor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Division1" Relationship="Self.FK_Staff_Division" FromRole="Staff" ToRole="Division" />
           <NavigationProperty Name="Post1" Relationship="Self.FK_Staff_Post" FromRole="Staff" ToRole="Post" />
           <NavigationProperty Name="Role1" Relationship="Self.FK_Staff_Role" FromRole="Staff" ToRole="Role" />
@@ -389,9 +399,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище practiceModelContainer" CdmEntityContainer="practiceEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище practice04ModelContainer" CdmEntityContainer="practiceEntities">
           <EntitySetMapping Name="Divisions">
-            <EntityTypeMapping TypeName="practiceModel.Division">
+            <EntityTypeMapping TypeName="practice04Model.Division">
               <MappingFragment StoreEntitySet="Division">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -399,7 +409,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Flowers">
-            <EntityTypeMapping TypeName="practiceModel.Flower">
+            <EntityTypeMapping TypeName="practice04Model.Flower">
               <MappingFragment StoreEntitySet="Flower">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Icon" ColumnName="Icon" />
@@ -409,7 +419,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Posts">
-            <EntityTypeMapping TypeName="practiceModel.Post">
+            <EntityTypeMapping TypeName="practice04Model.Post">
               <MappingFragment StoreEntitySet="Post">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -417,7 +427,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="practiceModel.Role">
+            <EntityTypeMapping TypeName="practice04Model.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -425,7 +435,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ScheduleInputs">
-            <EntityTypeMapping TypeName="practiceModel.ScheduleInput">
+            <EntityTypeMapping TypeName="practice04Model.ScheduleInput">
               <MappingFragment StoreEntitySet="ScheduleInputs">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_Staff" ColumnName="ID_Staff" />
@@ -434,7 +444,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Staffs">
-            <EntityTypeMapping TypeName="practiceModel.Staff">
+            <EntityTypeMapping TypeName="practice04Model.Staff">
               <MappingFragment StoreEntitySet="Staff">
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -449,11 +459,16 @@
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Home" ColumnName="Home" />
+                <ScalarProperty Name="Room" ColumnName="Room" />
+                <ScalarProperty Name="Entrance" ColumnName="Entrance" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="practiceModel.sysdiagram">
+            <EntityTypeMapping TypeName="practice04Model.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -464,7 +479,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Trashes">
-            <EntityTypeMapping TypeName="practiceModel.Trash">
+            <EntityTypeMapping TypeName="practice04Model.Trash">
               <MappingFragment StoreEntitySet="Trash">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_User" ColumnName="ID_User" />

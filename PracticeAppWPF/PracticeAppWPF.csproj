@@ -44,6 +44,10 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -80,9 +84,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controls\Cards\OrderCard.xaml.cs">
-      <DependentUpon>OrderCard.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="Division.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -114,10 +115,14 @@
     <Compile Include="Pages\MainСategories.xaml.cs">
       <DependentUpon>MainСategories.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MultiValueConverter.cs" />
-    <Compile Include="Pages\OrderBuy.xaml.cs">
+    <Compile Include="Pages\OrderBuyPage\OrderBuy.xaml.cs">
       <DependentUpon>OrderBuy.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OrderBuyPage\OrderBuyViewModel.cs" />
     <Compile Include="Pages\PersonalAccountPage\PersonalAccountViewModel.cs" />
     <Compile Include="Pages\RegistrationPage\RegistrationViewModel.cs" />
     <Compile Include="Pages\Orders.xaml.cs">
@@ -144,10 +149,6 @@
     <Compile Include="Trash.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Page Include="Controls\Cards\OrderCard.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -176,7 +177,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\OrderBuy.xaml">
+    <Page Include="Pages\MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrderBuyPage\OrderBuy.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -20,7 +20,7 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="#7F000000"></Grid>
         <StackPanel Grid.Column="2" Orientation="Horizontal">
-            <Button Content="Назад" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" Margin="0,0,47,0" Padding="5,5,5,5"/>
+            <Button Content="Назад" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" Margin="0,0,47,0" Padding="5,5,5,5" Click="Button_Click_1"/>
             <Button x:Name="OrdersButton" Content="Корзина" VerticalAlignment="Center" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Click="Button_Click" Padding="5,5,5,5"/>
         </StackPanel>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="ЦВЕТУЧИНО" FontSize="22" FontWeight="Bold"  Grid.Column="1" Foreground="White"/>

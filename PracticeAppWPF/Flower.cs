@@ -23,10 +23,10 @@ namespace PracticeAppWPF
     
         public int ID { get; set; }
         public string Icon { get; set; }
-        public string IconFullPath => Path.Combine("../../Resources/Images/Flowers/", Icon);
         public string Description { get; set; }
         public int Cost { get; set; }
-    
+        public string IconFullPath => Path.Combine("../../Resources/Images/Flowers/", Icon);
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Trash> Trashes { get; set; }
     }

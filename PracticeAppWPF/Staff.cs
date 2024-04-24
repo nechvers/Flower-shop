@@ -34,6 +34,11 @@ namespace PracticeAppWPF
         public string Login { get; set; }
         public string Password { get; set; }
         public Nullable<int> Role { get; set; }
+        public string Street { get; set; }
+        public string Home { get; set; }
+        public string Room { get; set; }
+        public string Entrance { get; set; }
+        public string Floor { get; set; }
     
         public virtual Division Division1 { get; set; }
         public virtual Post Post1 { get; set; }

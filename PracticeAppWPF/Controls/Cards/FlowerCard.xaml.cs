@@ -19,7 +19,7 @@ namespace PracticeAppWPF.Controls.Cards
                         "Source",
                          typeof(Flower),
                          typeof(FlowerCard));
-   
+
         public static readonly DependencyProperty CountProperty =
                   DependencyProperty.Register(
                         "Count",
@@ -35,15 +35,22 @@ namespace PracticeAppWPF.Controls.Cards
         public int Count
         {
             get => (int)GetValue(CountProperty);
-            set => SetValue(CountProperty, value);
+            set
+            {
+                SetValue(CountProperty, value);
+                CountChanged?.Invoke();
+            }
         }
+
+        public int Price => Count * Source.Cost;
 
         public bool IsToTrashButtonVisible
         {
-            set => ToTrash.Visibility =  value ? Visibility.Visible : Visibility.Hidden;
+            set => ToTrash.Visibility = value ? Visibility.Visible : Visibility.Hidden;
         }
 
         public event Action Clicked;
+        public event Action CountChanged;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

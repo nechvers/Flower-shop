@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticeAppWPF.Pages"
         mc:Ignorable="d"
-        Title="Trash" Height="500" Width="820" Loaded="Page_Loaded">
+        Title="Trash" Height="500" Width="820" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="../Resources/Images/Backgrounds/background.png"/>
@@ -21,8 +21,8 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="#7F000000"></Grid>
         <StackPanel Grid.Column="2" Orientation="Horizontal">
-            <Button Content="Назад" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" Margin="0,0,47,0" Padding="5,5,5,5"/>
-            <Button x:Name="BuyButton" Content="Оформить" VerticalAlignment="Center" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center"  HorizontalContentAlignment="Center" Padding="5,5,5,5"/>
+            <Button Content="Назад" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" Margin="0,0,47,0" Padding="5,5,5,5" Click="Button_Click"/>
+            <Button x:Name="BuyButton" Content="Оформить" VerticalAlignment="Center" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center"  HorizontalContentAlignment="Center" Padding="5,5,5,5" Click="BuyButton_Click"/>
         </StackPanel>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="ЦВЕТУЧИНО" FontSize="22" FontWeight="Bold"  Grid.Column="1" Foreground="White"/>
 

@@ -16,6 +16,8 @@ namespace PracticeAppWPF.Pages
         public MainСategories()
         {
             InitializeComponent();
+            OrdersButton.Content = $"Корзина ({MainWindow.OrdersFullPrice})";
+            MainWindow.OrdersFullPriceChanged += OnOrdersFullPriceChanged;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -25,13 +27,19 @@ namespace PracticeAppWPF.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+           
             foreach (Flower flower in Database.Flowers)
             {
                 var instance = new FlowerCard() { Source = flower };
                 instance.Clicked += () => OnCardClicked(instance);
                 FlowerCards.Children.Add(instance);
             }
-            OrdersButton.Content = $"Корзина ({Database.Trashes.Sum(a => a.Count * a.Flower.Cost)})";
+            
+        }
+
+        private void OnOrdersFullPriceChanged(int value)
+        {
+            OrdersButton.Content = $"Корзина ({value})";
         }
 
         private void OnCardClicked(FlowerCard card)
@@ -45,12 +53,20 @@ namespace PracticeAppWPF.Pages
             };
             Database.Trashes.Add(trash);
             Database.SaveChanges();
-            OrdersButton.Content = $"Корзина ({Database.Trashes.Sum(a => a.Count * a.Flower.Cost)})";
-        }
+            MainWindow.OrdersFullPrice = Database.Trashes
+                .Where(a => a.ID_User == MainWindow.CurrentUser.ID)
+                .Sum(a => a.Count * a.Flower.Cost);
+    }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.NavigateToOrdersPage();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainWindow.NavigateToMenuPage();
+
         }
     }
 }
