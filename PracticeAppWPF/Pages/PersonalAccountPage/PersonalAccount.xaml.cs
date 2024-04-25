@@ -13,12 +13,16 @@ namespace PracticeAppWPF.Pages.PersonalAccountPage
         public PersonalAccount()
         {
             InitializeComponent();
-            DataContext = new PersonalAccountViewModel();
         }
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             MainWindow.NavigateToMenuPage();
+        }
+
+        private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            DataContext = new PersonalAccountViewModel();
         }
     }
 }

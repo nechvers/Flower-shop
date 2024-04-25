@@ -34,12 +34,12 @@ namespace PracticeAppWPF.Pages
         {
             DataContext = new OrderBuyViewModel();
             Cost.Content = MainWindow.OrdersFullPrice.ToString();
-            FinalCost.Content = MainWindow.OrdersFullPrice.ToString();
+            FinalCost.Content = $"{MainWindow.OrdersFullPrice - (MainWindow.OrdersFullPrice * 0.15)}";
         }
 
-        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            GenerateContract();
+            //GenerateContract();
         }
 
         private void GenerateContract()
@@ -59,8 +59,8 @@ namespace PracticeAppWPF.Pages
             Bookmarks["НомерЧека"].Range.Text = $"{rndNumber}";
             Bookmarks["Покупатель"].Range.Text = $"{user.Surname} {user.Name} {user.Patronymic}";
             Bookmarks["Сумма"].Range.Text = $"{sum} руб.";
-            Bookmarks["Скидка"].Range.Text =  $"{0} руб.";
-            Bookmarks["Итог"].Range.Text = $"{sum} руб.";
+            Bookmarks["Скидка"].Range.Text =  $"15 %";
+            Bookmarks["Итог"].Range.Text = $"{FinalCost.Content} руб.";
     
 
             wDoc.SaveAs2(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), $"Чек №{rndNumber}.docx"));

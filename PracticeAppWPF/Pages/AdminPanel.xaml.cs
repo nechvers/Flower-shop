@@ -1,7 +1,9 @@
-﻿using System.Data.Entity.Migrations;
+﻿
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using Bcrypt = BCrypt.Net.BCrypt;
 
 namespace PracticeAppWPF.Pages
 {
@@ -58,6 +60,13 @@ namespace PracticeAppWPF.Pages
             m_selected.Login = Login.Text;
             m_selected.Division = (SelectDivision.SelectedItem as Division).ID;
             m_selected.Post = (SelectPost.SelectedItem as Post).ID;
+
+            var password = Password.Text;
+            if (!string.IsNullOrEmpty(password))
+            {
+                m_selected.Password = Bcrypt.HashPassword(password, 4);
+            }
+
             Database.Staffs.AddOrUpdate(m_selected);
             Database.SaveChanges();
             MessageBox.Show("Готово");

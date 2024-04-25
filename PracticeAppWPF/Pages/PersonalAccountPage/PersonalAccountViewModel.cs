@@ -1,10 +1,14 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.Win32;
+using System;
+using System.ComponentModel;
 using System.Data.Entity.Migrations;
 using System.Data.Entity.Validation;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using Bcrypt = BCrypt.Net.BCrypt;
 
 namespace PracticeAppWPF.Pages.PersonalAccountPage
@@ -13,7 +17,9 @@ namespace PracticeAppWPF.Pages.PersonalAccountPage
     {
         private Staff user => MainWindow.CurrentUser;
         private string m_password;
+        private BitmapImage m_image;
         private Command m_saveCommand;
+        private Command m_loadCommand;
 
         public string Name
         {
@@ -42,6 +48,9 @@ namespace PracticeAppWPF.Pages.PersonalAccountPage
                 OnPropertyChanged("Patronymic");
             }
         }
+
+        public string FIO => $"{user.Surname} {user.Name} {user.Patronymic}";
+
         public string Passport
         {
             get => user.Passport;
@@ -89,15 +98,39 @@ namespace PracticeAppWPF.Pages.PersonalAccountPage
             }
         }
 
+        public BitmapImage Image
+        {
+            get => m_image;
+            set
+            { 
+                m_image = value;
+                OnPropertyChanged("Image");
+            }
+        }
+
         public Command SaveCommand
         {
             get => m_saveCommand ?? (m_saveCommand = new Command(TrySave));
         }
 
-
-        public void TrySave(object parameter)
+        public Command LoadCommand
         {
+            get => m_loadCommand ?? (m_loadCommand = new Command(ChooseImage));
+        }
 
+        public PersonalAccountViewModel()
+        {
+            string imageDir = string.Empty;
+            if (string.IsNullOrEmpty(user.Photo))
+                imageDir = "pack://application:,,,/Resources/Images/Icons/istockphoto-1300845620-612x612.jpg";
+            else
+                imageDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", user.Photo);
+
+            Image = new BitmapImage(new Uri(imageDir));
+        }
+
+        private void TrySave(object parameter)
+        {
             string pattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$";
             if (string.IsNullOrEmpty(Surname) || string.IsNullOrEmpty(Name)
                 || string.IsNullOrEmpty(Patronymic) || string.IsNullOrEmpty(Passport)
@@ -132,6 +165,9 @@ namespace PracticeAppWPF.Pages.PersonalAccountPage
             staff.Email = Email;
             staff.Password = hashedPassword;
 
+            var avatar = Image.UriSource.ToString().Split('/');
+            staff.Photo = avatar[avatar.Length - 1];
+
             Database.Staffs.AddOrUpdate(staff);
 
             try
@@ -150,7 +186,27 @@ namespace PracticeAppWPF.Pages.PersonalAccountPage
                 }
             }
 
+            MessageBox.Show("Готово");
+        }
 
+        private void ChooseImage(object parameter)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            op.Title = "Select a picture";
+            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+              "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+              "Portable Network Graphic (*.png)|*.png";
+
+            op.ShowDialog();
+            if (string.IsNullOrEmpty(op.FileName)) return;
+
+            string imagesDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images");
+            if (!Directory.Exists(imagesDir)) 
+                Directory.CreateDirectory(imagesDir);
+
+            string filename = Path.Combine(imagesDir, $"{Guid.NewGuid()}.{op.FileName.Split('.')[1]}");
+            File.Copy(op.FileName, filename, true);
+            Image = new BitmapImage(new Uri(filename));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -16,6 +16,7 @@ namespace PracticeAppWPF.Pages
         private static Orders s_instance;
         public static Orders Instance => s_instance ?? (s_instance = new Orders());
         private readonly List<(FlowerCard, Trash)> _changed = new List<(FlowerCard, Trash)>();
+        private practiceEntities context;
         public Orders()
         {
             InitializeComponent();
@@ -25,26 +26,57 @@ namespace PracticeAppWPF.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            context = new practiceEntities();
             orders.Children.Clear();
-            foreach (var order in Database.Trashes.Where(a => a.ID_User == MainWindow.CurrentUser.ID))
+
+            foreach (var order in context.Trashes.Where(a => a.ID_User == MainWindow.CurrentUser.ID))
             {
                 var instance = new FlowerCard() { Source = order.Flower };
                 instance.Count = order.Count;
                 instance.IsToTrashButtonVisible = false;
-                instance.CountChanged += () => OnCountChanged(instance ,order);
+                instance.CountChanged += () => OnCountChanged(instance, order);
                 orders.Children.Add(instance);
             }
+
+            
         }
 
         private void OnCountChanged(FlowerCard card, Trash order)
+        {
+            if (card.Count == 0)
+            {
+                var result = MessageBox.Show("Вы действительно хотите удалить товар из корзины?", "", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    orders.Children.Remove(card);
+                    context.Trashes.Remove(order);
+                    _changed.Remove((card, order));
+                    context.SaveChanges();
+
+                    CalculateCost();
+                    return;
+                }
+
+                card.Count = order.Count;
+                CalculateCost();
+                return;
+            }
+           
+            _changed.Add((card, order));
+            CalculateCost();
+
+
+        }
+
+        private void CalculateCost()
         {
             var sum = 0;
             foreach (FlowerCard trash in orders.Children)
             {
                 sum += trash.Price;
             }
-            _changed.Add((card, order));
             MainWindow.OrdersFullPrice = sum;
+
         }
 
         private void OnOrdersFullPriceChanged(int value)
@@ -56,9 +88,12 @@ namespace PracticeAppWPF.Pages
         {
             foreach (var trash in _changed)
             {
+                if (trash.Item1.Count < 1) continue;
                 trash.Item2.Count = trash.Item1.Count;
-                Database.Trashes.AddOrUpdate(trash.Item2);
+                context.Trashes.AddOrUpdate(trash.Item2);
+                context.SaveChanges();
             }
+            context.Dispose();
         }
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
