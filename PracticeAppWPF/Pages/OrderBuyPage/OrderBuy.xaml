@@ -22,7 +22,7 @@
         <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="#7F000000"></Grid>
         <StackPanel Grid.Column="2" Orientation="Horizontal">
             <Button Content="Назад" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" Width="100" Margin="0,0,25,0" Click="Button_Click_1"/>
-            <Button x:Name="BuyButton" Content="Оформить" VerticalAlignment="Center" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Width="120" HorizontalContentAlignment="Center"/>
+            <Button x:Name="BuyButton" Content="Оформить" VerticalAlignment="Center" Height="35" Background="White" BorderBrush="#FFABADB3" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" MinWidth="120" HorizontalContentAlignment="Center"/>
         </StackPanel>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="ЦВЕТУЧИНО" FontSize="22" FontWeight="Bold"  Grid.Column="1" Foreground="White"/>
 

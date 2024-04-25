@@ -19,6 +19,13 @@ namespace PracticeAppWPF.Pages
             InitializeComponent();
             OrdersButton.Content = $"Корзина ({MainWindow.OrdersFullPrice})";
             MainWindow.OrdersFullPriceChanged += OnOrdersFullPriceChanged;
+
+            foreach (Flower flower in Database.Flowers)
+            {
+                var instance = new FlowerCard() { Source = flower };
+                instance.Clicked += () => OnCardClicked(instance);
+                FlowerCards.Children.Add(instance);
+            }
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -28,13 +35,8 @@ namespace PracticeAppWPF.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-
-            foreach (Flower flower in Database.Flowers)
-            {
-                var instance = new FlowerCard() { Source = flower };
-                instance.Clicked += () => OnCardClicked(instance);
-                FlowerCards.Children.Add(instance);
-            }
+           // FlowerCards.Children.Clear();
+            
 
         }
 
