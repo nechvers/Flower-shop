@@ -278,6 +278,9 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Resource Include="Pages\PersonalAccountPage\istockphoto-1300845620-612x612.jpg" />
+    <Resource Include="Pages\PersonalAccountPage\background.png" />
+    <Resource Include="Pages\background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
